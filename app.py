@@ -84,8 +84,8 @@ def calculate_standings():
 
 # --- 1. FÁZA: REGISTRÁCIA ---
 if st.session_state.stage == "REGISTRATION":
-    st.title("⚽ FIFA Turnaj - Registrácia")
-    st.info("Vyplňte mená. Ak ste 3 -> ide sa rovno Finále. Ak 4+ -> ide sa Playoff.")
+    st.title("⚽ FIFA Turnaj - NEBO EDITION ⚽")
+    st.info("Vyplň mená a tímy. Ak ste 3 -> po zápasoch každý s každým sa ide do finále. Ak 4+ -> ide sa Playoff.")
     
     with st.form("reg_form"):
         temp_data = []
@@ -120,7 +120,7 @@ if st.session_state.stage == "REGISTRATION":
             temp_data.append({"name": n6, "team": t6})
         
         st.write("")
-        submit = st.form_submit_button("Generovať turnaj 🎲", use_container_width=True, type="primary")
+        submit = st.form_submit_button("Let's goooo! 🎲", use_container_width=True, type="primary")
         
         if submit:
             valid_players = [p for p in temp_data if p['name'].strip() != ""]
