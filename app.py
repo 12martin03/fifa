@@ -124,7 +124,7 @@ def calculate_final_stats(final_ranking):
 
 # --- 1. REGISTRÁCIA ---
 if st.session_state.stage == "REGISTRATION":
-    st.title("⚽ FIFA Turnaj - Registrácia")
+    st.title("⚽ FIFA Turnaj - Nebo vol. 4⚽")
     with st.form("reg_form"):
         temp_data = []
         c1, c2, c3 = st.columns(3)
@@ -137,7 +137,7 @@ if st.session_state.stage == "REGISTRATION":
             with [c4, c5, c6][i-4]:
                 st.markdown(f"**Hráč {i}**")
                 temp_data.append({"name": st.text_input("Meno", key=f"n{i}"), "team": st.text_input("Tím", key=f"t{i}")})
-        if st.form_submit_button("Generovať turnaj 🎲", use_container_width=True, type="primary"):
+        if st.form_submit_button("Let's goooooooo 🎲", use_container_width=True, type="primary"):
             valid = [p for p in temp_data if p['name'].strip()]
             if len(valid) < 3: st.error("Musíte byť aspoň traja!")
             else:
