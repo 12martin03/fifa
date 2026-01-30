@@ -148,8 +148,8 @@ def calculate_final_stats(final_ranking):
 
 # --- 1. FÁZA: REGISTRÁCIA ---
 if st.session_state.stage == "REGISTRATION":
-    st.title("⚽ FIFA Turnaj - Registrácia")
-    st.info("Vyplňte mená. Ak ste 3 -> ide sa rovno Finále. Ak 4+ -> ide sa Playoff.")
+    st.title("⚽ FIFA Turnaj - Nebo vol. 4⚽")
+    st.info("Vyplň mená a tímy. Ak hráte 3, pôjde sa rovno finále. Ak 4+, ide sa Playoff.")
     
     with st.form("reg_form"):
         temp_data = []
@@ -183,7 +183,7 @@ if st.session_state.stage == "REGISTRATION":
             temp_data.append({"name": n6, "team": t6})
         
         st.write("")
-        submit = st.form_submit_button("Generovať turnaj 🎲", use_container_width=True, type="primary")
+        submit = st.form_submit_button("Let's goooooooooo 🎲", use_container_width=True, type="primary")
         
         if submit:
             valid_players = [p for p in temp_data if p['name'].strip() != ""]
@@ -307,7 +307,7 @@ elif st.session_state.stage == "PLAYOFF":
 
     # --- VARIANTA B: 4+ HRÁČOV ---
     else:
-        st.title("⚔️ PLAYOFF PAVÚK")
+        st.title("⚽ PLAY-OFF PAVÚK ⚽")
         if not pm:
             pm["SF1"] = {"h": seeds[0], "a": seeds[3], "sh": 0, "sa": 0, "played": False}
             pm["SF2"] = {"h": seeds[1], "a": seeds[2], "sh": 0, "sa": 0, "played": False}
@@ -405,7 +405,7 @@ elif st.session_state.stage == "PLAYOFF":
 
 # --- SIDEBAR INFO ---
 with st.sidebar:
-    st.error("⚠️ NEZATVÁRAŤ ANI NEREFRESHOVAŤ STRÁNKU!")
-    if st.button("Reštartovať od nuly"):
+    st.error("⚠️ NEZATVÁRAJ ANI NEREFRESHUJ STRÁNKU, LEBO SA VYMAŽÚ ÚDAJE!")
+    if st.button("AK POTREBUJEŠ, KLIKNI PRE RESET"):
         st.session_state.clear()
         st.rerun()
